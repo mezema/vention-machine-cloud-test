@@ -1,1 +1,1 @@
-create database "stator";
+create database "vention_machine_cloud_test";

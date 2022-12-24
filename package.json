@@ -1,5 +1,5 @@
 {
-  "name": "stator",
+  "name": "ventionMachineCloudTest",
   "private": true,
   "license": "MIT",
   "scripts": {
@@ -14,8 +14,8 @@
     "build": "nx build",
     "commit": "cz",
     "dep-graph": "nx dep-graph",
-    "docker:build:api": "docker build -t stator-api -f dockerfiles/api/Dockerfile .",
-    "docker:build:webapp": "docker build -t stator-webapp -f dockerfiles/webapp/Dockerfile .",
+    "docker:build:api": "docker build -t ventionMachineCloudTest-api -f dockerfiles/api/Dockerfile .",
+    "docker:build:webapp": "docker build -t ventionMachineCloudTest-webapp -f dockerfiles/webapp/Dockerfile .",
     "e2e": "nx e2e",
     "format": "nx format:write",
     "format:check": "nx format:check",
@@ -46,7 +46,7 @@
     "workspace-generator": "nx workspace-generator",
     "generate-api-redux": "node node_modules/@rtk-query/codegen-openapi/lib/bin/cli.js apps/cli/src/open-api-config.ts && node cli/main.js generate-cache-key-file",
     "cli": "node cli/main.js",
-    "stator-cli": "node cli/main.js"
+    "ventionMachineCloudTest-cli": "node cli/main.js"
   },
   "husky": {
     "hooks": {
@@ -80,7 +80,7 @@
     "@nestjsx/crud": "5.0.0-alpha.3",
     "@nestjsx/crud-request": "5.0.0-alpha.3",
     "@nestjsx/crud-typeorm": "5.0.0-alpha.3",
-    "@nrwl/nx-cloud": "13.2.2",
+    "@nrwl/nx-cloud": "^13.2.2",
     "@reduxjs/toolkit": "1.7.1",
     "axios": "0.24.0",
     "class-transformer": "0.5.1",

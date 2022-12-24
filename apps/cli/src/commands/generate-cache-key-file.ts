@@ -14,7 +14,7 @@ export class GenerateCacheKeyFile extends Command {
   static usage = Command.Usage({
     category: "generators",
     description: "This script will generate the required cache key files for your redux webapp.",
-    examples: [["A basic example", "npm run stator-cli generate-cache-key-file"]],
+    examples: [["A basic example", "npm run ventionMachineCloudTest-cli generate-cache-key-file"]],
   })
 
   async execute(): Promise<number | void> {

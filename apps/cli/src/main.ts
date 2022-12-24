@@ -9,8 +9,8 @@ import { RenameProject } from "./commands/rename-project"
 const [, , ...args] = process.argv
 
 const cli = new Cli({
-  binaryLabel: `stator-cli`,
-  binaryName: `npm run stator-cli`,
+  binaryLabel: `ventionMachineCloudTest-cli`,
+  binaryName: `npm run ventionMachineCloudTest-cli`,
   binaryVersion: `1.0.0`,
 })
 

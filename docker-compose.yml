@@ -1,7 +1,7 @@
 version: "3.6"
 services:
   database:
-    container_name: stator-postgres-full-stack
+    container_name: vention_machine_cloud_test-postgres-full-stack
     image: postgres:latest
     build:
       context: .
@@ -12,13 +12,13 @@ services:
       - -c
       - listen_addresses=*
     environment:
-      POSTGRES_DB: stator
+      POSTGRES_DB: vention_machine_cloud_test
       POSTGRES_HOST_AUTH_METHOD: "trust" # Not recommended, only for demo purposes
     volumes:
       # seeding
       - ./apps/database/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
       # named volume
-      - stator-data:/var/lib/postgresql/stator/data
+      - vention_machine_cloud_test-data:/var/lib/postgresql/vention_machine_cloud_test/data
   webapp:
     container_name: webapp-full-stack
     build:
@@ -30,7 +30,7 @@ services:
     container_name: api-full-stack
     environment:
       - DATABASE_PORT=5432
-      - DATABASE_HOST=stator-postgres-full-stack
+      - DATABASE_HOST=vention_machine_cloud_test-postgres-full-stack
     build:
       context: .
       dockerfile: ./apps/api/Dockerfile
@@ -43,4 +43,4 @@ services:
       - "80:80"
 
 volumes:
-  stator-data:
+  vention_machine_cloud_test-data:

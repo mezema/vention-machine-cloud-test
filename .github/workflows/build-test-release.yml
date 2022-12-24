@@ -1,4 +1,4 @@
-name: stator CI
+name: ventionMachineCloudTest CI
 
 on:
   pull_request:

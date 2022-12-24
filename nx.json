@@ -1,5 +1,5 @@
 {
-  "npmScope": "stator",
+  "npmScope": "ventionMachineCloudTest",
   "affected": {
     "defaultBase": "master"
   },
@@ -17,8 +17,13 @@
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "accessToken": "nx_cloud_token",
-        "cacheableOperations": ["build", "lint", "e2e", "test"],
+        "accessToken": "MDFmNDI2MGEtYzMyYy00OWU4LWFhMGUtZjM4NzA1ZjMxMzk5fHJlYWQtd3JpdGU=",
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "e2e",
+          "test"
+        ],
         "cacheDirectory": ".cache/nx",
         "canTrackAnalytics": false,
         "showUsageWarnings": true,

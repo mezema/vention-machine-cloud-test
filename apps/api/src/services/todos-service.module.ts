@@ -1,6 +1,6 @@
 import { Module } from "@nestjs/common"
 import { TypeOrmModule } from "@nestjs/typeorm"
-import { Todo } from "@stator/models"
+import { Todo } from "@ventionMachineCloudTest/models"
 
 import { TodosService } from "./todos.service"
 

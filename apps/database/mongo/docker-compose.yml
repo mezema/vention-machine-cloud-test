@@ -2,12 +2,12 @@ version: "3.6"
 services:
   database:
     image: mongo:4.4.1-bionic
-    container_name: stator-mongo
+    container_name: vention_machine_cloud_test-mongo
     ports:
       - 27017:27017
     environment:
-      - MONGO_INITDB_DATABASE=stator
-      - MONGO_INITDB_ROOT_USERNAME=stator
+      - MONGO_INITDB_DATABASE=vention_machine_cloud_test
+      - MONGO_INITDB_ROOT_USERNAME=vention_machine_cloud_test
       - MONGO_INITDB_ROOT_PASSWORD=secret
     volumes:
       # seeding scripts

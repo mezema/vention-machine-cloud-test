@@ -81,9 +81,9 @@ jobs:
             ssh-add ~/.ssh/id_rsa
             cd ~
             ssh-keyscan github.com >> ~/.ssh/known_hosts
-            rm -rf stator
-            git clone git@github.com:chocolat-chaud-io/stator.git
-            cd stator
+            rm -rf ventionMachineCloudTest
+            git clone git@github.com:vention/ventionMachineCloudTest.git
+            cd ventionMachineCloudTest
             git checkout ${{ env.GITHUB_HEAD_REF_SLUG }}
             echo "DROPLET_PORT=${{ env.DROPLET_PORT }}" > .env
             docker-compose config

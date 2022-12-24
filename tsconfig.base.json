@@ -17,10 +17,10 @@
     "noImplicitUseStrict": true,
     "baseUrl": ".",
     "paths": {
-      "@stator/models": ["libs/models/src/index.ts"]
+      "@ventionMachineCloudTest/models": ["libs/models/src/index.ts"]
     },
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true
   },
-  "exclude": ["stator/node_modules", "tmp"]
+  "exclude": ["ventionMachineCloudTest/node_modules", "tmp"]
 }

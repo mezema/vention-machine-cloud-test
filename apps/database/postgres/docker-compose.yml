@@ -2,22 +2,22 @@ version: "3.6"
 services:
   database:
     image: postgres:13
-    container_name: stator-postgres
+    container_name: vention_machine_cloud_test-postgres
     ports:
-      - 5433:5432
+      - 5434:5432
     restart: always
     command:
       - postgres
       - -c
       - listen_addresses=*
     environment:
-      POSTGRES_DB: stator
+      POSTGRES_DB: vention_machine_cloud_test
       POSTGRES_HOST_AUTH_METHOD: "trust" # Not recommended, only for demo purposes
     volumes:
       # seeding
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
       # named volume
-      - stator-data:/var/lib/postgresql/stator/data
+      - vention_machine_cloud_test-data:/var/lib/postgresql/vention_machine_cloud_test/data
 
 volumes:
-  stator-data:
+  vention_machine_cloud_test-data:
