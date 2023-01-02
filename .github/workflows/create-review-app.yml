@@ -82,7 +82,7 @@ jobs:
             cd ~
             ssh-keyscan github.com >> ~/.ssh/known_hosts
             rm -rf ventionMachineCloudTest
-            git clone git@github.com:vention/ventionMachineCloudTest.git
+            git clone git@github.com:Vention/ventionMachineCloudTest.git
             cd ventionMachineCloudTest
             git checkout ${{ env.GITHUB_HEAD_REF_SLUG }}
             echo "DROPLET_PORT=${{ env.DROPLET_PORT }}" > .env

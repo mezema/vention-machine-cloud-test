@@ -1,0 +1,15 @@
+entity: Product
+items:
+  product1:
+    id: 1
+    name: test-name-0
+    price: 2
+    imageUrl: test image 0
+    rating: []
+
+  product2:
+    id: 2
+    name: test-name-1
+    price: 1
+    imageUrl: test image 1
+    rating: []
