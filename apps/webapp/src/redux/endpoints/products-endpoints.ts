@@ -28,6 +28,9 @@ const injectedRtkApi = api.injectEndpoints({
     deleteOneProduct: build.mutation<DeleteOneProductApiResponse, DeleteOneProductApiArg>({
       query: queryArg => ({ url: `/api/products/${queryArg.id}`, method: "DELETE" }),
     }),
+    seedProducts: build.query<SeedProductsApiResponse, void>({
+      query: queryArg => ({ url: `/api/products/seed`, method: "GET" }),
+    }),
   }),
   overrideExisting: false,
 })
@@ -70,6 +73,8 @@ export type DeleteOneProductApiArg = {
   id: number
 }
 
+export type SeedProductsApiResponse = string
+
 export type GetManyProductResponseDto = {
   data: Product[]
   count: number
@@ -77,4 +82,4 @@ export type GetManyProductResponseDto = {
   page: number
   pageCount: number
 }
-export const { useGetManyProductsQuery, useCreateOneProductMutation, useUpdateOneProductMutation, useDeleteOneProductMutation } = injectedRtkApi
+export const { useGetManyProductsQuery, useCreateOneProductMutation, useUpdateOneProductMutation, useDeleteOneProductMutation, useSeedProductsQuery } = injectedRtkApi

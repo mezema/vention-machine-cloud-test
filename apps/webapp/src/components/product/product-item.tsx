@@ -30,22 +30,17 @@ import { useProductItemStyles } from './product-item.styles';
 
 export interface ProductItemProps {
   product: Product;
+  cartId: number;
 }
 
-export function ProductItem({ product }: ProductItemProps) {
+export function ProductItem({ product, cartId }: ProductItemProps) {
   const classes = useProductItemStyles();
-  const {
-    data: cart = [],
-    isFetching,
-    isLoading,
-    isError,
-  } = useGetManyCartsQuery();
 
   const { imageUrl, name, price } = product;
   const [isInCart, setIsInCart] = useState(false);
   const {
     data: inCart,
-  } = useItemExistsQuery({ cartId: cart[0]?.id, productId: product.id });
+  } = useItemExistsQuery({ cartId: cartId, productId: product.id });
   const [removeCartItem, { isLoading: isRemovingCartItem }] = useRemoveCartItemMutation();
   const [addCartItem, { isLoading: isAddingCartItem }] = useAddCartItemMutation();
   const [rating, setRating] = useState(0);
@@ -57,12 +52,12 @@ export function ProductItem({ product }: ProductItemProps) {
   }, [inCart]);
 
   const handleAddToCart = async () => {
-    const response = await addCartItem({ id: cart[0]?.id, productId: product.id });
+    const response = await addCartItem({ id: cartId, productId: product.id });
     setIsInCart(true);
   };
 
   const handleRemoveFromCart = async () => {
-    const response = await removeCartItem({ id: cart[0]?.id, productId: product.id });
+    const response = await removeCartItem({ id: cartId, productId: product.id });
     setIsInCart(false);
   };
 

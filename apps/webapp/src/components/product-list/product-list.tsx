@@ -8,9 +8,10 @@ import { useProductListStyles } from "./product-list.styles";
 
 export interface ProductListProps {
   products: Product[];
+  cartId: number;
 }
 
-export function ProductList({ products = [] }: ProductListProps) {
+export function ProductList({ products = [], cartId }: ProductListProps) {
   const classes = useProductListStyles()
   
   return (
@@ -18,7 +19,7 @@ export function ProductList({ products = [] }: ProductListProps) {
       <List container spacing={{ xs: 4, md: 6, xl: 8 }} justifyContent={'center'}>
         {products.map((product, index) => (
           <Grid item xs={12} sm={6} md={4} key={product.id}>
-            <ProductItem product={product} />
+            <ProductItem product={product} cartId={cartId}/>
           </Grid>
         ))}
       </List>

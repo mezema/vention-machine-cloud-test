@@ -6,15 +6,26 @@ import { MarketplacePage } from "../pages/marketplace-page/marketplace-page"
 import { Navbar } from "../components/navbar/navbar"
 import { useAppStyles } from "./app.styles"
 import { LandingPage } from "../pages/landing-page/landing-page"
+import { useCreateOneCartMutation, useGetManyCartsQuery } from "../redux/endpoints/carts-endpoints"
+import { Cart } from "@ventionMachineCloudTest/models"
 
 export const App = () => {
-  const classes = useAppStyles()  
-
+  const classes = useAppStyles()
+  const [createOneCart, { isLoading: isCreatingCart }] = useCreateOneCartMutation();
+  const { data: carts = [], isFetching, isLoading, isError } = useGetManyCartsQuery();
+  console.log("carts", carts);
+  
   return (
       <div className={clsx(classes.app, classes.cardContainer)}>
         <SnackbarListener />
-        <Navbar/>
-        <MarketplacePage />
+        {
+          carts.length === 0 ? <LandingPage /> : (
+            <>
+              <Navbar cartId={carts[0]?.id}/>
+              <MarketplacePage cartId={carts[0]?.id}/>
+            </>
+          )
+        }
       </div>
   )
 }

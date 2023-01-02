@@ -10,35 +10,32 @@ export class ProductsService {
         private readonly repository: Repository<Product>,
     ) {}
 
-    /*
-    import { Entity, Column, OneToMany } from 'typeorm';
-import { RootEntity } from './root.entity';
-import { Rating } from './rating.entity';
-import { CartItem } from './cart-item.entity';
-
-@Entity()
-export class Product extends RootEntity {
-    @Column()
-    name: string;
-
-    @Column()
-    imageUrl: string;
-
-    @OneToMany(() => Rating, rating => rating.product, { lazy: true })
-    ratings: Rating[];
-
-    @Column()
-    price: number;
-
-    @OneToMany(() => CartItem, cartItem => cartItem.product, { lazy: true })
-    cartItems: CartItem[];
-}*/
     // seed data
     async seed(): Promise<void> {
 
         const product = this.repository.create({ name: 'Product 1', imageUrl: 'https://picsum.photos/200/300', price: 100 });
 
         await this.repository.save(product);
+
+        const product2 = this.repository.create({ name: 'Product 2', imageUrl: 'https://picsum.photos/200/300', price: 200 });
+
+        await this.repository.save(product2);
+
+        const product3 = this.repository.create({ name: 'Product 3', imageUrl: 'https://picsum.photos/200/300', price: 300 });
+
+        await this.repository.save(product3);
+
+        const product4 = this.repository.create({ name: 'Product 4', imageUrl: 'https://picsum.photos/200/300', price: 400 });
+
+        await this.repository.save(product4);
+
+        const product5 = this.repository.create({ name: 'Product 5', imageUrl: 'https://picsum.photos/200/300', price: 500 });
+
+        await this.repository.save(product5);
+
+        const product6 = this.repository.create({ name: 'Product 6', imageUrl: 'https://picsum.photos/200/300', price: 600 });
+
+        await this.repository.save(product6);
     }
 
     async findAll(page = 1): Promise<Product[]> {

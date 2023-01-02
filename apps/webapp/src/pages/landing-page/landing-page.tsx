@@ -9,7 +9,8 @@ import {
 } from '@mui/material';
 import { useLandingPageStyles } from './landing-page.styles';
 import { useCreateOneCartMutation } from '../../redux/endpoints/carts-endpoints';
-import { Cart } from '@ventionMachineCloudTest/models';
+import { Cart, CartItem } from '@ventionMachineCloudTest/models';
+import axios from 'axios';
 
 export function LandingPage() {
   const classes = useLandingPageStyles();
@@ -17,11 +18,17 @@ export function LandingPage() {
 
     const handleGetStarted = async () => {
         const newCart = {
-            id: 0,
             cartItems: []
         } as Cart;
 
         const response = await createOneCart({cart: newCart});
+
+        if (response) {
+            const seedResponse = await axios.get('http://localhost:3333/api/products/seed');
+            console.log(seedResponse);
+        } else {
+            console.log('Error creating cart');
+        }
     };
 
   return (
