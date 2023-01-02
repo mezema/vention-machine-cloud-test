@@ -1,6 +1,6 @@
 import { Builtins, Cli } from "clipanion"
 
-import { EnforceFileFolderNamingConvention } from "./commands/enforce-file-folder-naming-convention"
+import { EnforceFileFolderNamingConVention } from "./commands/enforce-file-folder-naming-conVention"
 import { EnforceValidImportsApi } from "./commands/enforce-valid-imports-api"
 import { GenerateCacheKeyFile } from "./commands/generate-cache-key-file"
 import { GenerateEntityIndexFile } from "./commands/generate-entity-index-file"
@@ -18,6 +18,6 @@ cli.register(RenameProject)
 cli.register(GenerateCacheKeyFile)
 cli.register(GenerateEntityIndexFile)
 cli.register(EnforceValidImportsApi)
-cli.register(EnforceFileFolderNamingConvention)
+cli.register(EnforceFileFolderNamingConVention)
 cli.register(Builtins.HelpCommand)
 cli.runExit(args).catch(console.error)

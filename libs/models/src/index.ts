@@ -8,3 +8,18 @@ export * from "./lib/root.entity"
 
 // todo.entity.ts
 export * from "./lib/todo.entity"
+
+// cart.entity.ts
+export * from "./lib/cart.entity"
+
+// product.entity.ts
+export * from "./lib/product.entity"
+
+// rating.entity.ts
+export * from "./lib/rating.entity"
+
+// cart-item.entity.ts
+export * from "./lib/cart-item.entity"
+
+// user.entity.ts
+export * from "./lib/user.entity"

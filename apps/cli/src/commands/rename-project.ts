@@ -14,7 +14,7 @@ export class RenameProject extends Command {
   static usage = Command.Usage({
     category: "getting-started",
     description: "This script will rename all occurrences of ventionMachineCloudTest and chocolat-chaud with your own names.",
-    examples: [["A basic example", "npm run ventionMachineCloudTest-cli rename-project --organization vention --project ventionMachineCloudTest"]],
+    examples: [["A basic example", "npm run ventionMachineCloudTest-cli rename-project --organization Vention --project ventionMachineCloudTest"]],
   })
 
   async execute(): Promise<number | void> {
@@ -47,7 +47,7 @@ export class RenameProject extends Command {
           if (fileContent) {
             const isDatabaseFile = databaseFiles.some(databaseFile => entry.includes(databaseFile))
             const replacedFileContent = fileContent
-              .replace(/vention/gim, this.organization)
+              .replace(/Vention/gim, this.organization)
               .replace(/ventionMachineCloudTest/gim, isDatabaseFile ? databaseName : camelCaseProjectName)
             await fs.promises.writeFile(entry, replacedFileContent, "utf-8")
           }

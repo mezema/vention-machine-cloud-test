@@ -1,0 +1,11 @@
+entity: Cart
+items:
+  cart1:
+    id: 1
+    user: {}
+    cartItems: []
+
+  cart2:
+    id: 2
+    user: {}
+    cartItems: []

@@ -4,7 +4,7 @@ static_sites:
   - name: webapp
     environment_slug: html
     github:
-      repo: vention/ventionMachineCloudTest
+      repo: Vention/ventionMachineCloudTest
       branch: master
       deploy_on_push: true
     build_command: npm run remap-api-url && npm run build webapp -- --prod
@@ -16,7 +16,7 @@ services:
   - name: api
     environment_slug: node-js
     github:
-      repo: vention/ventionMachineCloudTest
+      repo: Vention/ventionMachineCloudTest
       branch: master
       deploy_on_push: true
     build_command: npm run remap-redoc && npm run build api -- --prod

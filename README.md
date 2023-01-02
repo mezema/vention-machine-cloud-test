@@ -7,14 +7,14 @@
 </br>
 
 <div align="center">
-  <a href="https://badge.fury.io/gh/vention%2FventionMachineCloudTest">
-    <img src="https://badge.fury.io/gh/vention%2FventionMachineCloudTest.svg" alt="GitHub version" />
+  <a href="https://badge.fury.io/gh/Vention%2FventionMachineCloudTest">
+    <img src="https://badge.fury.io/gh/Vention%2FventionMachineCloudTest.svg" alt="GitHub version" />
   </a>
-  <a href="https://github.com/vention/ventionMachineCloudTest/actions">
-    <img src="https://github.com/vention/ventionMachineCloudTest/workflows/ventionMachineCloudTest%20CI/badge.svg" alt="Github action status" />
+  <a href="https://github.com/Vention/ventionMachineCloudTest/actions">
+    <img src="https://github.com/Vention/ventionMachineCloudTest/workflows/ventionMachineCloudTest%20CI/badge.svg" alt="Github action status" />
   </a>
-  <a href="https://codecov.io/gh/vention/ventionMachineCloudTest">
-    <img src="https://codecov.io/gh/vention/ventionMachineCloudTest/branch/master/graph/badge.svg?token=3XN225FUIT" alt="Coverage Status" />
+  <a href="https://codecov.io/gh/Vention/ventionMachineCloudTest">
+    <img src="https://codecov.io/gh/Vention/ventionMachineCloudTest/branch/master/graph/badge.svg?token=3XN225FUIT" alt="Coverage Status" />
   </a>
   <a href="http://commitizen.github.io/cz-cli/">
     <img src="https://img.shields.io/badge/commitizen-friendly-ff69b4.svg" alt="Commitizen friendly" />
@@ -37,7 +37,7 @@
   <a href="http://makeapullrequest.com">
     <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome" />
   </a>
-  <a href="https://github.com/vention/ventionMachineCloudTest">
+  <a href="https://github.com/Vention/ventionMachineCloudTest">
     <img src="https://img.shields.io/badge/Made%20With-Love-orange.svg" alt="Made With Love" />
   </a>
 </div>
@@ -85,7 +85,7 @@ Have you ever started a new project by yourself?<br/>
 If so, you probably know that it is tedious to set up all the necessary tools.<br/>
 Just like you, the part I enjoy the most is coding, not boilerplate.
 
-Say hi to ventionMachineCloudTest, a full-stack [TypeScript](https://github.com/microsoft/TypeScript) template that enforces conventions, handles releases, automates deployments and much more!
+Say hi to ventionMachineCloudTest, a full-stack [TypeScript](https://github.com/microsoft/TypeScript) template that enforces conVentions, handles releases, automates deployments and much more!
 
 If you want more details about how this idea was implemented, I recommend reading the [series of blog articles](https://yann510.hashnode.dev/creating-the-modern-developer-stack-template-part-1-ckfl56axy02e85ds18pa26a6z) I wrote on the topic.
 
@@ -100,11 +100,11 @@ Of course, you won't be creating a todo application for your project, but you ca
 
 ### Technical Stack
 
-For a detailed list of all those technologies, you can read this [blog article](https://yann510.hashnode.dev/ventionMachineCloudTest-a-full-stack-template-releases-deployments-enforced-conventions-ckhmnyhr903us9ms1b20lgi3b).
+For a detailed list of all those technologies, you can read this [blog article](https://yann510.hashnode.dev/ventionMachineCloudTest-a-full-stack-template-releases-deployments-enforced-conVentions-ckhmnyhr903us9ms1b20lgi3b).
 
- | Deployment                                                                       | Database                                         | Backend                                                       | Frontend                                                      | Testing                                                                          | Conventions                                                                      |
+ | Deployment                                                                       | Database                                         | Backend                                                       | Frontend                                                      | Testing                                                                          | ConVentions                                                                      |
  | -------------------------------------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------------- | ------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
- | [DigitalOcean App Platform](https://www.digitalocean.com/products/app-platform/) | [Postgres](https://github.com/postgres/postgres) | [Nest](https://github.com/nestjs/nest)                        | [React](https://github.com/facebook/react)                    | [jest](https://github.com/facebook/jest)                                         | [commitlint](https://github.com/conventional-changelog/commitlint)               |
+ | [DigitalOcean App Platform](https://www.digitalocean.com/products/app-platform/) | [Postgres](https://github.com/postgres/postgres) | [Nest](https://github.com/nestjs/nest)                        | [React](https://github.com/facebook/react)                    | [jest](https://github.com/facebook/jest)                                         | [commitlint](https://github.com/conVentional-changelog/commitlint)               |
  | [semantic-release](https://github.com/semantic-release/semantic-release)         | [Mongo](https://github.com/mongodb/mongo)        | [Fastify](https://github.com/fastify/fastify)                 | [React Router](https://github.com/ReactTraining/react-router) | [cypress](https://github.com/cypress-io/cypress)                                 | [eslint](https://github.com/eslint/eslint)                                       |
  | [docker-compose](https://github.com/docker/compose)                              | [TypeORM](https://github.com/typeorm/typeorm)    | [Swagger](https://github.com/nestjs/swagger)                  | [Redux](https://github.com/reduxjs/redux)                     |                                                                                  | [prettier](https://github.com/prettier/prettier)                                 |
  |                                                                                  | [NestJs CRUD](https://github.com/nestjsx/crud)   | [ReDoc](https://github.com/Redocly/redoc)                     | [Redux Toolkit](https://github.com/reduxjs/redux-toolkit)     |                                                                                  |                                                                                  |
@@ -327,9 +327,9 @@ To facilitate and optimize the usage of the monorepo, we make use of [NX](https:
 
 [eslint](https://github.com/eslint/eslint) enforces excellent standards, and [prettier](https://github.com/prettier/prettier) helps you apply them.
 
-Commit messages must abide to those [guidelines](https://www.conventionalcommits.org/en/v1.0.0/). If you need help following them, simply run `npm run commit` and you will be prompted with an interactive menu.
+Commit messages must abide to those [guidelines](https://www.conVentionalcommits.org/en/v1.0.0/). If you need help following them, simply run `npm run commit` and you will be prompted with an interactive menu.
 
-File and directory names are enforced by the custom-made `enforce-file-folder-naming-convention.ts`.
+File and directory names are enforced by the custom-made `enforce-file-folder-naming-conVention.ts`.
 
 Branch names are enforced before you even commit to ensure everyone adopts the same standard: `{issue-number}-{branch-work-title-kebab-case}`.
 

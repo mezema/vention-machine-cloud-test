@@ -4,8 +4,8 @@ import { Command } from "clipanion"
 
 import { walk } from "../utils"
 
-export class EnforceFileFolderNamingConvention extends Command {
-  static paths = [["enforce-file-folder-naming-convention"]]
+export class EnforceFileFolderNamingConVention extends Command {
+  static paths = [["enforce-file-folder-naming-conVention"]]
 
   static usage = Command.Usage({
     category: "enforcers",
@@ -48,7 +48,7 @@ export class EnforceFileFolderNamingConvention extends Command {
     }
 
     if (errorPathPaths.length > 0) {
-      const errorMessage = `${errorPathPaths.length} files/directories do not respect the kebab-case convention enforced.`
+      const errorMessage = `${errorPathPaths.length} files/directories do not respect the kebab-case conVention enforced.`
 
       console.error(errorMessage)
       console.error(errorPathPaths)

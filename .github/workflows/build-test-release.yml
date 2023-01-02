@@ -24,8 +24,8 @@ jobs:
         env:
           TEST: true
 
-      - name: Enforce naming conventions
-        run: npm run lint:file-folder-convention
+      - name: Enforce naming conVentions
+        run: npm run lint:file-folder-conVention
 
       - name: Lint affected files
         run: npm run affected:lint

@@ -24,7 +24,7 @@
     "get-started": "npm i && npm run start --prefix tools/getting-started",
     "help": "nx help",
     "lint": "npm run affected:lint",
-    "lint:file-folder-convention": "node cli/main.js enforce-file-folder-naming-convention",
+    "lint:file-folder-conVention": "node cli/main.js enforce-file-folder-naming-conVention",
     "lint:api-imports": "node cli/main.js enforce-valid-imports-api",
     "mongo": "run-script-os",
     "mongo:default": "sudo docker-compose -f ./apps/database/mongo/docker-compose.yml up",
@@ -51,13 +51,13 @@
   "husky": {
     "hooks": {
       "post-checkout": "branch-naming-check '^\\d+(-[a-z]+)+|master$'",
-      "pre-commit": "branch-naming-check '^\\d+(-[a-z]+)+|master$' && npm run lint:file-folder-convention && npm run lint:api-imports",
+      "pre-commit": "branch-naming-check '^\\d+(-[a-z]+)+|master$' && npm run lint:file-folder-conVention && npm run lint:api-imports",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "./node_modules/cz-conVentional-changelog"
     }
   },
   "dependencies": {
@@ -77,11 +77,12 @@
     "@nestjs/swagger": "5.1.5",
     "@nestjs/terminus": "8.0.3",
     "@nestjs/typeorm": "8.0.2",
-    "@nestjsx/crud": "5.0.0-alpha.3",
+    "@nestjsx/crud": "^5.0.0-alpha.3",
     "@nestjsx/crud-request": "5.0.0-alpha.3",
     "@nestjsx/crud-typeorm": "5.0.0-alpha.3",
     "@nrwl/nx-cloud": "^13.2.2",
     "@reduxjs/toolkit": "1.7.1",
+    "@tanstack/react-query": "^4.20.4",
     "axios": "0.24.0",
     "class-transformer": "0.5.1",
     "class-transformer-validator": "0.9.1",
@@ -97,6 +98,7 @@
     "pg": "8.7.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-query": "^3.39.2",
     "react-redux": "7.2.6",
     "react-router-dom": "6.2.1",
     "redoc": "2.0.0-rc.44",
@@ -112,7 +114,7 @@
     "@babel/preset-react": "7.16.7",
     "@babel/preset-typescript": "7.16.7",
     "@commitlint/cli": "16.0.1",
-    "@commitlint/config-conventional": "16.0.0",
+    "@commitlint/config-conVentional": "16.0.0",
     "@innocells/branch-naming-check": "1.0.0",
     "@nestjs/schematics": "8.0.5",
     "@nestjs/testing": "8.2.4",
@@ -148,7 +150,7 @@
     "commitizen": "4.2.4",
     "cross-env": "7.0.3",
     "cypress": "9.5.3",
-    "cz-conventional-changelog": "3.3.0",
+    "cz-conVentional-changelog": "3.3.0",
     "dotenv": "10.0.0",
     "eslint": "8.28.0",
     "eslint-config-prettier": "8.3.0",

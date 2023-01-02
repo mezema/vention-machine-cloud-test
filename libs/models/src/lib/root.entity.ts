@@ -1,12 +1,6 @@
-import { CreateDateColumn, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm"
+import { PrimaryGeneratedColumn } from 'typeorm';
 
-export class RootEntity {
-  @PrimaryGeneratedColumn()
-  id?: number
-
-  @CreateDateColumn({ type: "timestamp" })
-  createdAt?: Date
-
-  @UpdateDateColumn({ type: "timestamp" })
-  updatedAt?: Date
+export abstract class RootEntity {
+    @PrimaryGeneratedColumn()
+    id: number;
 }
