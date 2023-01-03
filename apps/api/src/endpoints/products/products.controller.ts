@@ -8,7 +8,7 @@ import { ApiTags } from '@nestjs/swagger';
 export class ProductsController {
     constructor(private readonly productsService: ProductsService) {}
 
-    @Post('seed')
+    @Get('seed')
     async seed(): Promise<string> {
         await this.productsService.seed();
         
@@ -39,4 +39,17 @@ export class ProductsController {
     async remove(@Param('id') id: string): Promise<Product> {
         return this.productsService.remove(id);
     }
+
+    // Get rating for a product
+    @Get(':id/rating')
+    async getRating(@Param('id') id: string): Promise<number> {
+        return this.productsService.getRating(id);
+    }
+
+    // rate a product
+    @Post(':id/rating')
+    async rate(@Param('id') id: string, @Body('rating') rating: number): Promise<Product> {
+        return this.productsService.rate(id, rating);
+    }
+
 }

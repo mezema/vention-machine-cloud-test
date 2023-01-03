@@ -19,22 +19,21 @@ import {
 import { ShoppingCart } from '@mui/icons-material';
 import useNavbarStyles from './navbar.styles';
 import { CartItem } from '@ventionMachineCloudTest/models';
-import { useGetOneCartQuery, useGetCartItemsQuery } from '../../redux/endpoints/carts-endpoints';
+import { useGetManyCartsQuery, useGetCartItemsQuery } from '../../redux/endpoints/carts-endpoints';
 import { useSelector } from 'react-redux';
 
-export function Navbar() {
+export interface NavbarProps {
+  cartId: number;
+}
+
+export function Navbar({cartId}: NavbarProps) {
     const classes = useNavbarStyles();
     const [open, setOpen] = useState(false);
-    const { data: cart,
-        isFetching,
-        isLoading,
-        isError,
-    } = useGetOneCartQuery({id: 4});
 
     const state = useSelector((state: unknown) => state);
 
 
-    const updateCart = useGetCartItemsQuery({ id: cart?.id }) || undefined;
+    const updateCart = useGetCartItemsQuery({ id: cartId }) || undefined;
     const cartItems = updateCart?.data || [];
 
     async function updateCartAndRefetch() {
@@ -44,26 +43,14 @@ export function Navbar() {
     useEffect(() => {
         // this seems questionable. Need to look into how to do this more efficiently
         updateCartAndRefetch();
-    }, [state]);
-
-    if (isLoading) {
-        return <div>Loading...</div>;
-    }
-
-    if (isError) {
-        return <div>Error</div>;
-    }
-
-    if (isFetching) {
-        return <div>Fetching...</div>;
-    }
+    }, [open]);
     
     return (
       <div className={classes.root}>
         <AppBar className={classes.appbar}>
           <Toolbar>
             <Typography variant="h6" className={classes.title}>
-              Shopping Cart
+              Vention Machine Cloud Test
             </Typography>
             <IconButton 
               color="inherit" 
@@ -71,7 +58,6 @@ export function Navbar() {
               onClick={() => setOpen(!open)}
             >
               <ShoppingCart />
-              <span className="badge">{cartItems?.length}</span>
             </IconButton>
           </Toolbar>
         </AppBar>
