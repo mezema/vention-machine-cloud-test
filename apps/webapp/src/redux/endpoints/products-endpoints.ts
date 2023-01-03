@@ -31,6 +31,20 @@ const injectedRtkApi = api.injectEndpoints({
     seedProducts: build.query<SeedProductsApiResponse, void>({
       query: queryArg => ({ url: `/api/products/seed`, method: "GET" }),
     }),
+
+    /*
+    @Get(':id/rating')
+    async getRating(@Param('id') id: string): Promise<number> {
+        return this.productsService.getRating(id);
+    }
+    @Post(':id/rating')
+    async rate(@Param('id') id: string, @Body('rating') rating: number): Promise<Product> {
+        return this.productsService.rate(id, rating);
+    }*/
+    // Get ratings for a product
+    getRating: build.query<GetRatingApiResponse, GetRatingApiArg>({
+      query: queryArg => ({ url: `/api/products/${queryArg.id}/rating`, method: "GET" }),
+    }),
   }),
   overrideExisting: false,
 })
@@ -75,6 +89,11 @@ export type DeleteOneProductApiArg = {
 
 export type SeedProductsApiResponse = string
 
+export type GetRatingApiResponse = /** status 200 Get many base response */ number
+export type GetRatingApiArg = {
+  id: number
+}
+
 export type GetManyProductResponseDto = {
   data: Product[]
   count: number
@@ -82,4 +101,4 @@ export type GetManyProductResponseDto = {
   page: number
   pageCount: number
 }
-export const { useGetManyProductsQuery, useCreateOneProductMutation, useUpdateOneProductMutation, useDeleteOneProductMutation, useSeedProductsQuery } = injectedRtkApi
+export const { useGetManyProductsQuery, useCreateOneProductMutation, useUpdateOneProductMutation, useDeleteOneProductMutation, useSeedProductsQuery, useGetRatingQuery } = injectedRtkApi

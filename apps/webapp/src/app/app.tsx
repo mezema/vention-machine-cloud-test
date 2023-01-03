@@ -13,7 +13,6 @@ export const App = () => {
   const classes = useAppStyles()
   const [createOneCart, { isLoading: isCreatingCart }] = useCreateOneCartMutation();
   const { data: carts = [], isFetching, isLoading, isError } = useGetManyCartsQuery();
-  console.log("carts", carts);
   
   return (
       <div className={clsx(classes.app, classes.cardContainer)}>

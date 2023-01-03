@@ -43,14 +43,14 @@ export function Navbar({cartId}: NavbarProps) {
     useEffect(() => {
         // this seems questionable. Need to look into how to do this more efficiently
         updateCartAndRefetch();
-    }, [state]);
+    }, [open]);
     
     return (
       <div className={classes.root}>
         <AppBar className={classes.appbar}>
           <Toolbar>
             <Typography variant="h6" className={classes.title}>
-              Shopping Cart
+              Vention Machine Cloud Test
             </Typography>
             <IconButton 
               color="inherit" 
@@ -58,7 +58,6 @@ export function Navbar({cartId}: NavbarProps) {
               onClick={() => setOpen(!open)}
             >
               <ShoppingCart />
-              <span className="badge">{cartItems?.length}</span>
             </IconButton>
           </Toolbar>
         </AppBar>

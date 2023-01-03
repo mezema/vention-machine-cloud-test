@@ -11,12 +11,12 @@ export class Product extends RootEntity {
     @Column()
     imageUrl: string;
 
-    @OneToMany(() => Rating, rating => rating.product, { lazy: true })
+    @OneToMany(() => Rating, rating => rating.product)
     ratings: Rating[];
 
     @Column()
     price: number;
 
-    @OneToMany(() => CartItem, cartItem => cartItem.product, { lazy: true })
+    @OneToMany(() => CartItem, cartItem => cartItem.product)
     cartItems: CartItem[];
 }

@@ -26,7 +26,10 @@ import {
   useItemExistsQuery,
 } from '../../redux/endpoints/carts-endpoints';
 
+import { useGetRatingQuery } from '../../redux/endpoints/products-endpoints';
+
 import { useProductItemStyles } from './product-item.styles';
+import axios from "axios";
 
 export interface ProductItemProps {
   product: Product;
@@ -43,6 +46,9 @@ export function ProductItem({ product, cartId }: ProductItemProps) {
   } = useItemExistsQuery({ cartId: cartId, productId: product.id });
   const [removeCartItem, { isLoading: isRemovingCartItem }] = useRemoveCartItemMutation();
   const [addCartItem, { isLoading: isAddingCartItem }] = useAddCartItemMutation();
+  const {
+    data: productRating,
+  } = useGetRatingQuery({ id: product.id });
   const [rating, setRating] = useState(0);
   const [showButton, setShowButton] = useState(false);
 
@@ -50,6 +56,12 @@ export function ProductItem({ product, cartId }: ProductItemProps) {
   useEffect(() => {
     setIsInCart(inCart);
   }, [inCart]);
+
+  useEffect(() => {
+    if (productRating) {
+      setRating(productRating);
+    }
+  }, [productRating]);
 
   const handleAddToCart = async () => {
     const response = await addCartItem({ id: cartId, productId: product.id });
@@ -69,8 +81,10 @@ export function ProductItem({ product, cartId }: ProductItemProps) {
     }
   };
 
-  const rateProduct = (event, newValue) => {
+  const rateProduct = async (event, newValue) => {
     setRating(newValue);
+    const seedResponse = await axios.post(`http://localhost:3333/api/products/${product.id}/rating`, { rating: newValue });
+    console.log("seedResponse", seedResponse);
   };
 
 
@@ -129,7 +143,7 @@ export function ProductItem({ product, cartId }: ProductItemProps) {
           />
           {
             isInCart
-              ? <Chip label="In cart" color="primary" variant="outlined" style={{position: 'absolute', top: '0', left: '0'}}/>
+              ? <Chip label="In cart" color="info" variant="filled" style={{position: 'absolute', top: '0', left: '0'}}/>
               : null
           }
         </CardContent>
