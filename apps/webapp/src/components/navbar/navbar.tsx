@@ -24,9 +24,10 @@ import { useSelector } from 'react-redux';
 
 export interface NavbarProps {
   cartId: number;
+  cartUpdate: (update: boolean) => () => void;
 }
 
-export function Navbar({cartId}: NavbarProps) {
+export function Navbar({cartId, cartUpdate}: NavbarProps) {
     const classes = useNavbarStyles();
     const [open, setOpen] = useState(false);
 
@@ -43,7 +44,7 @@ export function Navbar({cartId}: NavbarProps) {
     useEffect(() => {
         // this seems questionable. Need to look into how to do this more efficiently
         updateCartAndRefetch();
-    }, [open]);
+    }, [open, cartUpdate]);
     
     return (
       <div className={classes.root}>
@@ -58,6 +59,7 @@ export function Navbar({cartId}: NavbarProps) {
               onClick={() => setOpen(!open)}
             >
               <ShoppingCart />
+              <span className="badge">{cartItems?.length}</span>
             </IconButton>
           </Toolbar>
         </AppBar>
