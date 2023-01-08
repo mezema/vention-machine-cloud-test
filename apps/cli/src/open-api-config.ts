@@ -6,12 +6,12 @@ const config: ConfigFile = {
   apiFile: `${reduxPath}/ventionMachineCloudTest-api.ts`,
   apiImport: "ventionMachineCloudTestApi",
   outputFiles: {
-    [`${reduxPath}/endpoints/todos-endpoints.ts`]: { exportName: "todosApi", filterEndpoints: /todos/i },
-    [`${reduxPath}/endpoints/users-endpoints.ts`]: { exportName: "usersApi", filterEndpoints: /users/i },
-    [`${reduxPath}/endpoints/carts-endpoints.ts`]: { exportName: "cartsApi", filterEndpoints: /carts/i },
-    [`${reduxPath}/endpoints/products-endpoints.ts`]: { exportName: "productsApi", filterEndpoints: /products/i },
+    [`${reduxPath}/endpoints/todos-endpoints.ts`]: { exportName: "todosApi", filterEndpoints: /todo/i },
+    [`${reduxPath}/endpoints/users-endpoints.ts`]: { exportName: "usersApi", filterEndpoints: /user/i },
+    [`${reduxPath}/endpoints/carts-endpoints.ts`]: { exportName: "cartsApi", filterEndpoints: /cart/i },
+    [`${reduxPath}/endpoints/products-endpoints.ts`]: { exportName: "productsApi", filterEndpoints: /product/i },
   },
-  filterEndpoints: /todos|user|cart|product/i,
+  filterEndpoints: /todo|user|cart|product/i,
   exportName: "ventionMachineCloudTestApi",
   hooks: true,
 }

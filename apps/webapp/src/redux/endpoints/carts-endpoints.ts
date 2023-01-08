@@ -30,12 +30,6 @@ const injectedRtkApi = api.injectEndpoints({
     getCartItem: build.query<GetCartItemApiResponse, GetCartItemApiArg>({
       query: queryArg => ({ url: `/api/carts/${queryArg.id}/items/${queryArg.productId}`}),
     }),
-    /*
-    @Get(':cartId/items/:productId/exists')
-    itemExists(@Param('cartId') cartId: number, @Param('productId') productId: number): Promise<boolean> {
-        return this.cartsService.itemExists(cartId, productId);
-    }
-    */
     itemExists: build.query<ItemExistsApiResponse, ItemExistsApiArg>({
       query: queryArg => ({ url: `/api/carts/${queryArg.cartId}/items/${queryArg.productId}/exists` }),
     }),

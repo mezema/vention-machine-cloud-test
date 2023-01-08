@@ -5,16 +5,17 @@ import React from 'react';
 
 export interface MarketplacePageProps {
   cartId: number;
+  cartUpdate: (update: boolean) => () => void;
 }
 
-export function MarketplacePage({cartId}: MarketplacePageProps) {
+export function MarketplacePage({cartId, cartUpdate}: MarketplacePageProps) {
   const classes = useMarketplacePageStyles();
   const { data: products = [], isFetching, isLoading, isError }
     = useGetManyProductsQuery({ page: 1, limit: 10 });
 
   return (
     <div className={classes.root}>
-      <ProductList products={products} cartId={cartId} />
+      <ProductList products={products} cartId={cartId} cartUpdate={cartUpdate}/>
     </div>
   );
 }

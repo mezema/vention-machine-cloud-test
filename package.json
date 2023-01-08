@@ -46,7 +46,8 @@
     "workspace-generator": "nx workspace-generator",
     "generate-api-redux": "node node_modules/@rtk-query/codegen-openapi/lib/bin/cli.js apps/cli/src/open-api-config.ts && node cli/main.js generate-cache-key-file",
     "cli": "node cli/main.js",
-    "ventionMachineCloudTest-cli": "node cli/main.js"
+    "ventionMachineCloudTest-cli": "node cli/main.js",
+    "start-local": "concurrently \"npm:postgres\" \"npm start api\" \"npm start webapp\""
   },
   "husky": {
     "hooks": {
@@ -88,6 +89,7 @@
     "class-transformer-validator": "0.9.1",
     "class-validator": "0.13.2",
     "clsx": "1.1.1",
+    "concurrently": "^7.6.0",
     "document-register-element": "1.14.10",
     "extra-watch-webpack-plugin": "1.0.3",
     "fastify-swagger": "4.13.0",

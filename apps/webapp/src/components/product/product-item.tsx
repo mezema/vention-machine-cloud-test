@@ -34,9 +34,10 @@ import axios from "axios";
 export interface ProductItemProps {
   product: Product;
   cartId: number;
+  cartUpdate: (update: boolean) => () => void;
 }
 
-export function ProductItem({ product, cartId }: ProductItemProps) {
+export function ProductItem({ product, cartId, cartUpdate }: ProductItemProps) {
   const classes = useProductItemStyles();
 
   const { imageUrl, name, price } = product;
@@ -66,11 +67,13 @@ export function ProductItem({ product, cartId }: ProductItemProps) {
   const handleAddToCart = async () => {
     const response = await addCartItem({ id: cartId, productId: product.id });
     setIsInCart(true);
+    cartUpdate(true)
   };
 
   const handleRemoveFromCart = async () => {
     const response = await removeCartItem({ id: cartId, productId: product.id });
     setIsInCart(false);
+    cartUpdate(true)
   };
 
   const handleCartAction = () => {
