@@ -10,7 +10,7 @@ export interface MarketplacePageProps {
 
 export function MarketplacePage({cartId, cartUpdate}: MarketplacePageProps) {
   const classes = useMarketplacePageStyles();
-  const { data: products = [], isFetching, isLoading, isError }
+  const { data: products = [] }
     = useGetManyProductsQuery({ page: 1, limit: 10 });
 
   return (

@@ -2,12 +2,11 @@ import { Module } from "@nestjs/common"
 import { ServeStaticModule } from "@nestjs/serve-static"
 
 import { configuration } from "../config/configuration"
-import { HealthModule } from "../endpoints/health/health.module"
-import { TodosModule } from "../endpoints/todos/todos.module"
-import { ProductsModule } from "../endpoints/products/products.module"
 import { CartsModule } from "../endpoints/carts/carts.module"
+import { HealthModule } from "../endpoints/health/health.module"
+import { ProductsModule } from "../endpoints/products/products.module"
+import { TodosModule } from "../endpoints/todos/todos.module"
 import { UsersModule } from "../endpoints/users/users.module"
-
 import { getRootModuleImports } from "../utils/utils"
 
 @Module({

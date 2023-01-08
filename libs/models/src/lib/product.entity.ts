@@ -1,22 +1,23 @@
-import { Entity, Column, OneToMany } from 'typeorm';
-import { RootEntity } from './root.entity';
-import { Rating } from './rating.entity';
-import { CartItem } from './cart-item.entity';
+import { Column, Entity, OneToMany } from "typeorm"
+
+import { CartItem } from "./cart-item.entity"
+import { Rating } from "./rating.entity"
+import { RootEntity } from "./root.entity"
 
 @Entity()
 export class Product extends RootEntity {
-    @Column()
-    name: string;
+  @Column()
+  name: string
 
-    @Column()
-    imageUrl: string;
+  @Column()
+  imageUrl: string
 
-    @OneToMany(() => Rating, rating => rating.product)
-    ratings: Rating[];
+  @OneToMany(() => Rating, rating => rating.product)
+  ratings: Rating[]
 
-    @Column()
-    price: number;
+  @Column()
+  price: number
 
-    @OneToMany(() => CartItem, cartItem => cartItem.product)
-    cartItems: CartItem[];
+  @OneToMany(() => CartItem, cartItem => cartItem.product)
+  cartItems: CartItem[]
 }

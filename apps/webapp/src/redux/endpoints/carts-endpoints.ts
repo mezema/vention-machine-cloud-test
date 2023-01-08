@@ -1,5 +1,6 @@
-import { api } from "../api";
-import { Cart, CartItem } from "@ventionMachineCloudTest/models";
+import { Cart, CartItem } from "@ventionMachineCloudTest/models"
+
+import { api } from "../api"
 
 const injectedRtkApi = api.injectEndpoints({
   endpoints: build => ({
@@ -28,14 +29,14 @@ const injectedRtkApi = api.injectEndpoints({
       query: queryArg => ({ url: `/api/carts/${queryArg.id}/items` }),
     }),
     getCartItem: build.query<GetCartItemApiResponse, GetCartItemApiArg>({
-      query: queryArg => ({ url: `/api/carts/${queryArg.id}/items/${queryArg.productId}`}),
+      query: queryArg => ({ url: `/api/carts/${queryArg.id}/items/${queryArg.productId}` }),
     }),
     itemExists: build.query<ItemExistsApiResponse, ItemExistsApiArg>({
       query: queryArg => ({ url: `/api/carts/${queryArg.cartId}/items/${queryArg.productId}/exists` }),
     }),
   }),
   overrideExisting: false,
-});
+})
 
 export { injectedRtkApi as cartsApi }
 
@@ -65,26 +66,26 @@ export type AddCartItemApiArg = {
 }
 export type GetManyCartsApiResponse = /** status 200 Response */ Cart[]
 export type GetManyCartsApiArg = {
-    /** Selects resource fields. <a href="https://github.com/nestjsx/crud/wiki/Requests#select" target="_blank">Docs</a> */
-    fields?: string[]
-    /** Adds search condition. <a href="https://github.com/nestjsx/crud/wiki/Requests#search" target="_blank">Docs</a> */
-    s?: string
-    /** Adds filter condition. <a href="https://github.com/nestjsx/crud/wiki/Requests#filter" target="_blank">Docs</a> */
-    filter?: string[]
-    /** Adds OR condition. <a href="https://github.com/nestjsx/crud/wiki/Requests#or" target="_blank">Docs</a> */
-    or?: string[]
-    /** Adds sort by field. <a href="https://github.com/nestjsx/crud/wiki/Requests#sort" target="_blank">Docs</a> */
-    sort?: string[]
-    /** Adds relational resources. <a href="https://github.com/nestjsx/crud/wiki/Requests#join" target="_blank">Docs</a> */
-    join?: string[]
-    /** Limit amount of resources. <a href="https://github.com/nestjsx/crud/wiki/Requests#limit" target="_blank">Docs</a> */
-    limit?: number
-    /** Offset amount of resources. <a href="https://github.com/nestjsx/crud/wiki/Requests#offset" target="_blank">Docs</a> */
-    offset?: number
-    /** Page portion of resources. <a href="https://github.com/nestjsx/crud/wiki/Requests#page" target="_blank">Docs</a> */
-    page?: number
-    /** Reset cache (if was enabled). <a href="https://github.com/nestjsx/crud/wiki/Requests#cache" target="_blank">Docs</a> */
-    cache?: number
+  /** Selects resource fields. <a href="https://github.com/nestjsx/crud/wiki/Requests#select" target="_blank">Docs</a> */
+  fields?: string[]
+  /** Adds search condition. <a href="https://github.com/nestjsx/crud/wiki/Requests#search" target="_blank">Docs</a> */
+  s?: string
+  /** Adds filter condition. <a href="https://github.com/nestjsx/crud/wiki/Requests#filter" target="_blank">Docs</a> */
+  filter?: string[]
+  /** Adds OR condition. <a href="https://github.com/nestjsx/crud/wiki/Requests#or" target="_blank">Docs</a> */
+  or?: string[]
+  /** Adds sort by field. <a href="https://github.com/nestjsx/crud/wiki/Requests#sort" target="_blank">Docs</a> */
+  sort?: string[]
+  /** Adds relational resources. <a href="https://github.com/nestjsx/crud/wiki/Requests#join" target="_blank">Docs</a> */
+  join?: string[]
+  /** Limit amount of resources. <a href="https://github.com/nestjsx/crud/wiki/Requests#limit" target="_blank">Docs</a> */
+  limit?: number
+  /** Offset amount of resources. <a href="https://github.com/nestjsx/crud/wiki/Requests#offset" target="_blank">Docs</a> */
+  offset?: number
+  /** Page portion of resources. <a href="https://github.com/nestjsx/crud/wiki/Requests#page" target="_blank">Docs</a> */
+  page?: number
+  /** Reset cache (if was enabled). <a href="https://github.com/nestjsx/crud/wiki/Requests#cache" target="_blank">Docs</a> */
+  cache?: number
 }
 
 export type GetOneCartApiResponse = /** status 200 Response */ Cart
@@ -109,4 +110,15 @@ export type ItemExistsApiArg = {
   productId: number
 }
 
-export const { useAddCartItemMutation, useGetCartItemsQuery, useGetCartItemQuery, useRemoveCartItemMutation, useGetManyCartsQuery, useCreateOneCartMutation, useUpdateOneCartMutation, useDeleteOneCartMutation,  useGetOneCartQuery, useItemExistsQuery } = injectedRtkApi
+export const {
+  useAddCartItemMutation,
+  useGetCartItemsQuery,
+  useGetCartItemQuery,
+  useRemoveCartItemMutation,
+  useGetManyCartsQuery,
+  useCreateOneCartMutation,
+  useUpdateOneCartMutation,
+  useDeleteOneCartMutation,
+  useGetOneCartQuery,
+  useItemExistsQuery,
+} = injectedRtkApi

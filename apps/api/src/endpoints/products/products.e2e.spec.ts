@@ -13,7 +13,7 @@ describe("Products", () => {
     testingHelper = await new TestingHelper().initializeModuleAndApp("Products", [ProductsModule])
 
     repository = testingHelper.module.get("ProductRepository")
-    await testingHelper.reloadFixtures();
+    await testingHelper.reloadFixtures()
   })
 
   afterAll(() => testingHelper.shutdownServer())
@@ -28,7 +28,7 @@ describe("Products", () => {
         .expect(200)
 
       expect(body).toMatchObject([
-        { id: expect.any(Number), name: "test-name-0", price: 2, imageUrl: "test image 0",  __ratings__: [] },
+        { id: expect.any(Number), name: "test-name-0", price: 2, imageUrl: "test image 0", __ratings__: [] },
         { id: expect.any(Number), name: "test-name-1", price: 1, imageUrl: "test image 1", __ratings__: [] },
       ])
     })
@@ -55,4 +55,3 @@ describe("Products", () => {
     })
   })
 })
-

@@ -2,7 +2,18 @@ import { api } from "../api"
 const injectedRtkApi = api.injectEndpoints({
   endpoints: build => ({
     getManyTodos: build.query<GetManyTodosApiResponse, GetManyTodosApiArg>({
-      query: (queryArg: { fields: any; s: any; filter: any; or: any; sort: any; join: any; limit: any; offset: any; page: any; cache: any }) => ({
+      query: (queryArg: {
+        fields: any
+        s: any
+        filter: any
+        or: any
+        sort: any
+        join: any
+        limit: any
+        offset: any
+        page: any
+        cache: any
+      }) => ({
         url: `/api/todos`,
         params: {
           fields: queryArg.fields,

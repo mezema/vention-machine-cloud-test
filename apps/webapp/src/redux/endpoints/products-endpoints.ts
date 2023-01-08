@@ -1,5 +1,6 @@
-import { api } from "../api"
 import { Product } from "@ventionMachineCloudTest/models"
+
+import { api } from "../api"
 const injectedRtkApi = api.injectEndpoints({
   endpoints: build => ({
     getManyProducts: build.query<GetManyProductsApiResponse, GetManyProductsApiArg>({
@@ -101,4 +102,11 @@ export type GetManyProductResponseDto = {
   page: number
   pageCount: number
 }
-export const { useGetManyProductsQuery, useCreateOneProductMutation, useUpdateOneProductMutation, useDeleteOneProductMutation, useSeedProductsQuery, useGetRatingQuery } = injectedRtkApi
+export const {
+  useGetManyProductsQuery,
+  useCreateOneProductMutation,
+  useUpdateOneProductMutation,
+  useDeleteOneProductMutation,
+  useSeedProductsQuery,
+  useGetRatingQuery,
+} = injectedRtkApi

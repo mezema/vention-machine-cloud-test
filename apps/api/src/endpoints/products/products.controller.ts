@@ -1,55 +1,55 @@
-import { Controller, Get, Post, Put, Delete, Param, Body, Query } from '@nestjs/common';
-import { ProductsService } from '../../services/products.service';
-import { Product } from '@ventionMachineCloudTest/models';
-import { ApiTags } from '@nestjs/swagger';
+import { Body, Controller, Delete, Get, Param, Post, Put, Query } from "@nestjs/common"
+import { ApiTags } from "@nestjs/swagger"
+import { Product } from "@ventionMachineCloudTest/models"
 
-@ApiTags('products')
-@Controller('products')
+import { ProductsService } from "../../services/products.service"
+
+@ApiTags("products")
+@Controller("products")
 export class ProductsController {
-    constructor(private readonly productsService: ProductsService) {}
+  constructor(private readonly productsService: ProductsService) {}
 
-    @Get('seed')
-    async seed(): Promise<string> {
-        await this.productsService.seed();
-        
-        return 'seeded products';
-    }
+  @Get("seed")
+  async seed(): Promise<string> {
+    await this.productsService.seed()
 
-    @Get()
-    async findAll(@Query('page') page = 1): Promise<Product[]> {      
-        return this.productsService.findAll(page);
-    }
+    return "seeded products"
+  }
 
-    @Get(':id')
-    async findOne(@Param('id') id: string): Promise<Product> {
-        return this.productsService.findOne(id);
-    }
+  @Get()
+  async findAll(@Query("page") page = 1): Promise<Product[]> {
+    return this.productsService.findAll(page)
+  }
 
-    @Post()
-    async create(@Body() product: Product): Promise<Product> {
-        return this.productsService.create(product);
-    }
+  @Get(":id")
+  async findOne(@Param("id") id: string): Promise<Product> {
+    return this.productsService.findOne(id)
+  }
 
-    @Put(':id')
-    async update(@Param('id') id: string, @Body() product: Product): Promise<Product> {
-        return this.productsService.update(id, product);
-    }
+  @Post()
+  async create(@Body() product: Product): Promise<Product> {
+    return this.productsService.create(product)
+  }
 
-    @Delete(':id')
-    async remove(@Param('id') id: string): Promise<Product> {
-        return this.productsService.remove(id);
-    }
+  @Put(":id")
+  async update(@Param("id") id: string, @Body() product: Product): Promise<Product> {
+    return this.productsService.update(id, product)
+  }
 
-    // Get rating for a product
-    @Get(':id/rating')
-    async getRating(@Param('id') id: string): Promise<number> {
-        return this.productsService.getRating(id);
-    }
+  @Delete(":id")
+  async remove(@Param("id") id: string): Promise<Product> {
+    return this.productsService.remove(id)
+  }
 
-    // rate a product
-    @Post(':id/rating')
-    async rate(@Param('id') id: string, @Body('rating') rating: number): Promise<Product> {
-        return this.productsService.rate(id, rating);
-    }
+  // Get rating for a product
+  @Get(":id/rating")
+  async getRating(@Param("id") id: string): Promise<number> {
+    return this.productsService.getRating(id)
+  }
 
+  // rate a product
+  @Post(":id/rating")
+  async rate(@Param("id") id: string, @Body("rating") rating: number): Promise<Product> {
+    return this.productsService.rate(id, rating)
+  }
 }

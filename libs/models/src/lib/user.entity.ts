@@ -1,24 +1,25 @@
-import { Entity, Column, OneToMany } from 'typeorm';
-import { RootEntity } from './root.entity';
-import { Cart } from './cart.entity';
+import { Column, Entity, OneToMany } from "typeorm"
+
+import { Cart } from "./cart.entity"
+import { RootEntity } from "./root.entity"
 
 @Entity()
 export class User extends RootEntity {
-    @Column()
-    username: string;
+  @Column()
+  username: string
 
-    @Column()
-    password: string;
+  @Column()
+  password: string
 
-    @Column()
-    firstName: string;
+  @Column()
+  firstName: string
 
-    @Column()
-    lastName: string;
+  @Column()
+  lastName: string
 
-    @Column()
-    email: string;
+  @Column()
+  email: string
 
-    @OneToMany(() => Cart, cart => cart.user)
-    carts: Cart[];
+  @OneToMany(() => Cart, cart => cart.user)
+  carts: Cart[]
 }

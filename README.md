@@ -35,6 +35,7 @@ npm run get-started
 A very simple application which represents a marketplace.<br/>
 
 ## Requirements
+
 - [*] An application using React that will display a list of items that you can add to your cart
 - [*] When you add an item to your cart it should be represented in the UI
 - [*] You should be able to remove products from the cart
@@ -42,6 +43,7 @@ A very simple application which represents a marketplace.<br/>
 - [*] Provide instructions in the README to launch the application
 
 ## Bonus points
+
 - [*] **Use TypeScript**
 - [*] Implement a backend and persist the state in a database
 - [ ] Have a single command to launch the whole application
@@ -53,13 +55,13 @@ A very simple application which represents a marketplace.<br/>
 
 For a detailed list of all those technologies, you can read this [blog article](https://yann510.hashnode.dev/ventionMachineCloudTest-a-full-stack-template-releases-deployments-enforced-conVentions-ckhmnyhr903us9ms1b20lgi3b).
 
- | Deployment                                                                       | Database                                         | Backend                                                       | Frontend                                                      | Testing                                                                          | ConVentions                                                                      |
- | -------------------------------------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------------- | ------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
- | [DigitalOcean App Platform](https://www.digitalocean.com/products/app-platform/) | [Postgres](https://github.com/postgres/postgres) | [Nest](https://github.com/nestjs/nest)                        | [React](https://github.com/facebook/react)                    | [jest](https://github.com/facebook/jest)                                         | [commitlint](https://github.com/conVentional-changelog/commitlint)               |
- | [semantic-release](https://github.com/semantic-release/semantic-release)         | [Mongo](https://github.com/mongodb/mongo)        | [Fastify](https://github.com/fastify/fastify)                 | [React Router](https://github.com/ReactTraining/react-router) | [cypress](https://github.com/cypress-io/cypress)                                 | [eslint](https://github.com/eslint/eslint)                                       |
- | [docker-compose](https://github.com/docker/compose)                              | [TypeORM](https://github.com/typeorm/typeorm)    | [Swagger](https://github.com/nestjs/swagger)                  | [Redux](https://github.com/reduxjs/redux)                     |                                                                                  | [prettier](https://github.com/prettier/prettier)                                 |
- |                                                                                  | [NestJs CRUD](https://github.com/nestjsx/crud)   | [ReDoc](https://github.com/Redocly/redoc)                     | [Redux Toolkit](https://github.com/reduxjs/redux-toolkit)     |                                                                                  |                                                                                  |
- |                                                                                  |                                                  |                                                               | [Material UI](https://github.com/mui-org/material-ui)         |                                                                                  |                                                                                  |
+| Deployment                                                                       | Database                                         | Backend                                       | Frontend                                                      | Testing                                          | ConVentions                                                        |
+| -------------------------------------------------------------------------------- | ------------------------------------------------ | --------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------------------ |
+| [DigitalOcean App Platform](https://www.digitalocean.com/products/app-platform/) | [Postgres](https://github.com/postgres/postgres) | [Nest](https://github.com/nestjs/nest)        | [React](https://github.com/facebook/react)                    | [jest](https://github.com/facebook/jest)         | [commitlint](https://github.com/conVentional-changelog/commitlint) |
+| [semantic-release](https://github.com/semantic-release/semantic-release)         | [Mongo](https://github.com/mongodb/mongo)        | [Fastify](https://github.com/fastify/fastify) | [React Router](https://github.com/ReactTraining/react-router) | [cypress](https://github.com/cypress-io/cypress) | [eslint](https://github.com/eslint/eslint)                         |
+| [docker-compose](https://github.com/docker/compose)                              | [TypeORM](https://github.com/typeorm/typeorm)    | [Swagger](https://github.com/nestjs/swagger)  | [Redux](https://github.com/reduxjs/redux)                     |                                                  | [prettier](https://github.com/prettier/prettier)                   |
+|                                                                                  | [NestJs CRUD](https://github.com/nestjsx/crud)   | [ReDoc](https://github.com/Redocly/redoc)     | [Redux Toolkit](https://github.com/reduxjs/redux-toolkit)     |                                                  |                                                                    |
+|                                                                                  |                                                  |                                               | [Material UI](https://github.com/mui-org/material-ui)         |                                                  |                                                                    |
 
 </br>
 
@@ -91,6 +93,7 @@ npm start api
 ```
 npm start webapp
 ```
+
 </br>
 
 ## ⚙️ Implementation
@@ -109,14 +112,15 @@ If this is what you want, you're good to go; everything will work out of the box
 
 By default, the automatic synchronization is activated between your models and the database.
 This means that making changes on your models will be automatically reflected on your database schemas.
-If you would like to control your migrations manually, you can do so by setting `synchronize` to false in `orm-config.ts` file. 
+If you would like to control your migrations manually, you can do so by setting `synchronize` to false in `orm-config.ts` file.
 
 Generate migration from your modified schemas:
 
 ```
 npm run typeorm -- migration:generate -n {MIGRATION_NAME}
 ```
-This will check the difference between models for your defined entities and your database schemas. 
+
+This will check the difference between models for your defined entities and your database schemas.
 If it finds changes, it will generate the appropriate migration scripts.
 
 Run all pending migrations:

@@ -1,9 +1,9 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit"
 import { setupListeners } from "@reduxjs/toolkit/query"
 
+import { api } from "./api"
 import { addGeneratedCacheKeys } from "./endpoints/generated-cache-keys"
 import { errorMiddleware } from "./middlewares/error-middleware"
-import { api } from "./api"
 import { snackbarThunksSlice } from "./thunks-slice/snackbar-thunks-slice"
 
 addGeneratedCacheKeys()
