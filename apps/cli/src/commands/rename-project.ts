@@ -14,7 +14,9 @@ export class RenameProject extends Command {
   static usage = Command.Usage({
     category: "getting-started",
     description: "This script will rename all occurrences of ventionMachineCloudTest and chocolat-chaud with your own names.",
-    examples: [["A basic example", "npm run ventionMachineCloudTest-cli rename-project --organization Vention --project ventionMachineCloudTest"]],
+    examples: [
+      ["A basic example", "npm run ventionMachineCloudTest-cli rename-project --organization Vention --project ventionMachineCloudTest"],
+    ],
   })
 
   async execute(): Promise<number | void> {

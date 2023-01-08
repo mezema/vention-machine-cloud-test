@@ -1,6 +1,6 @@
 import { ConfigService } from "@nestjs/config"
 import { TypeOrmModuleOptions } from "@nestjs/typeorm/dist/interfaces/typeorm-options.interface"
-import { Todo, Product, Cart, Rating, CartItem, User } from "@ventionMachineCloudTest/models"
+import { Cart, CartItem, Product, Rating, Todo, User } from "@ventionMachineCloudTest/models"
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const ormConfig = require("../../../database/orm-config")

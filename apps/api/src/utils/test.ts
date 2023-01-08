@@ -29,9 +29,7 @@ export class TestingHelper {
       providers: providers,
     }).compile()
 
-    this.app = await this.module.createNestApplication<NestFastifyApplication>(
-      new FastifyAdapter()
-    )
+    this.app = await this.module.createNestApplication<NestFastifyApplication>(new FastifyAdapter())
 
     await this.app.init()
     await this.app.getHttpAdapter().getInstance().ready()
@@ -47,9 +45,7 @@ export class TestingHelper {
 
     loader.load(path.resolve(this.getFixturePath()))
 
-    const fixtures = fixturesIterator(
-      new Resolver().resolve(loader.fixtureConfigs)
-    )
+    const fixtures = fixturesIterator(new Resolver().resolve(loader.fixtureConfigs))
     const builder = new Builder(connection, new Parser())
 
     for (const fixture of fixtures) {
@@ -63,11 +59,7 @@ export class TestingHelper {
   }
 
   private getFixturePath() {
-    const possibleFixturePaths = [
-      "./apps/api/src/assets/fixtures",
-      "./src/assets/fixtures",
-      "./assets/fixtures",
-    ]
+    const possibleFixturePaths = ["./apps/api/src/assets/fixtures", "./src/assets/fixtures", "./assets/fixtures"]
     for (const possibleFixturePath of possibleFixturePaths) {
       if (fs.existsSync(possibleFixturePath)) {
         return possibleFixturePath
@@ -75,10 +67,7 @@ export class TestingHelper {
     }
   }
 
-  private async createDatabaseIfNotExist(
-    connection: Connection,
-    databaseName: string
-  ) {
+  private async createDatabaseIfNotExist(connection: Connection, databaseName: string) {
     await connection.query(`CREATE EXTENSION IF NOT EXISTS dblink;
 DO $$
 BEGIN

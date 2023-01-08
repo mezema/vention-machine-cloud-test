@@ -1,12 +1,13 @@
-import { Entity, Column, ManyToOne } from 'typeorm';
-import { RootEntity } from './root.entity';
-import { Product } from './product.entity';
+import { Column, Entity, ManyToOne } from "typeorm"
+
+import { Product } from "./product.entity"
+import { RootEntity } from "./root.entity"
 
 @Entity()
 export class Rating extends RootEntity {
-    @Column()
-    rating: number;
+  @Column()
+  rating: number
 
-    @ManyToOne(() => Product, product => product.ratings)
-    product: Product;
+  @ManyToOne(() => Product, product => product.ratings)
+  product: Product
 }

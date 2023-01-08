@@ -5,10 +5,9 @@ import { Product, Rating } from "@ventionMachineCloudTest/models"
 import { ProductsService } from "./products.service"
 
 @Module({
-    imports: [TypeOrmModule.forFeature([Product, Rating])],
-    providers: [ProductsService],
-    exports: [ProductsService],
-    controllers: [],
+  imports: [TypeOrmModule.forFeature([Product, Rating])],
+  providers: [ProductsService],
+  exports: [ProductsService],
+  controllers: [],
 })
 export class ProductsServiceModule {}
-

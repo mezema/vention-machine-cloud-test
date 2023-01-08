@@ -5,7 +5,7 @@ import { Repository } from "typeorm"
 import { TestingHelper } from "../../utils/test"
 import { CartsModule } from "./carts.module"
 
-describe('Carts', () => {
+describe("Carts", () => {
   let testingHelper: TestingHelper
   let repository: Repository<Cart>
 
@@ -13,7 +13,7 @@ describe('Carts', () => {
     testingHelper = await new TestingHelper().initializeModuleAndApp("carts", [CartsModule])
 
     repository = testingHelper.module.get("CartRepository")
-    await testingHelper.reloadFixtures();
+    await testingHelper.reloadFixtures()
   })
 
   afterAll(() => testingHelper.shutdownServer())
@@ -26,7 +26,7 @@ describe('Carts', () => {
         .set("Accept", "application/json")
         .expect("Content-Type", /json/)
         .expect(200)
-      
+
       expect(body).toMatchObject([
         { id: expect.any(Number), __user__: expect.any(Object), __cartItems__: expect.any(Array) },
         { id: expect.any(Number), __user__: expect.any(Object), __cartItems__: expect.any(Array) },
@@ -34,7 +34,7 @@ describe('Carts', () => {
     })
 
     it("should create one cart", async () => {
-      const cart = new Cart();
+      const cart = new Cart()
 
       const { body } = await supertest
         .agent(testingHelper.app.getHttpServer())
@@ -44,7 +44,7 @@ describe('Carts', () => {
         .expect("Content-Type", /json/)
         .expect(201)
 
-      expect(body).toMatchObject({ id: expect.any(Number)})
+      expect(body).toMatchObject({ id: expect.any(Number) })
     })
 
     it("should delete one cart", async () => {
@@ -55,4 +55,3 @@ describe('Carts', () => {
     })
   })
 })
-
