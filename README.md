@@ -47,7 +47,7 @@ A very simple application which represents a marketplace.<br/>
 - [*] **Use TypeScript**
 - [*] Implement a backend and persist the state in a database
 - [*] Have a single command to launch the whole application
-- [*] Use the open-source project [stator](https://github.com/chocolat-chaud-io/stator) as a template for your applicationc.
+- [*] Use the open-source project [stator](https://github.com/chocolat-chaud-io/stator) as a template for your application.
 
 </br>
 
