@@ -23,6 +23,8 @@ Run the whole stack with one command:
 npm run start-local
 ```
 
+View application at - http://localhost:4200/
+
 Alternatively you can run the whole stack using these commands
 
 First, install the dependencies:
