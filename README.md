@@ -6,13 +6,48 @@
 </div>
 </br>
 
+## 💥 Getting Started
+
+### Prerequisites
+
+- [Docker Compose](https://docs.docker.com/compose/install/)
+- [node.js](https://nodejs.org/en/download/) v14.x
+
 ## 🚀 Quick Start
 
-The interactive CLI will guide you to easily setup your project.
+### Run the application
+
+Run the whole stack with one command:
 
 ```
-npm run get-started
+npm run start-local
 ```
+
+Alternatively you can run the whole stack using these commands
+
+First, install the dependencies:
+
+```
+npm i
+```
+
+Then:
+
+```
+npm run postgres
+```
+
+```
+npm start api
+```
+
+```
+npm start webapp
+```
+
+</br>
+
+
 
 </br>
 
@@ -65,44 +100,6 @@ For a detailed list of all those technologies, you can read this [blog article](
 
 </br>
 
-## 💥 Getting Started
-
-### Prerequisites
-
-- [Docker Compose](https://docs.docker.com/compose/install/)
-- [node.js](https://nodejs.org/en/download/) v14.x
-
-### Run the application
-
-Run the whole stack with one command:
-
-```
-npm run start-local
-```
-
-Alternatively you can run the whole stack using these commands
-
-First, install the dependencies:
-
-```
-npm i
-```
-
-Then:
-
-```
-npm run postgres
-```
-
-```
-npm start api
-```
-
-```
-npm start webapp
-```
-
-</br>
 
 ## ⚙️ Implementation
 
