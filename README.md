@@ -154,7 +154,7 @@ product: Product
 
 </br>
 
-### Things to be improved
+### Things to be improved/Upcoming features
 
 - Add user authentication and authorization to secure api resources.
 - Add pagination to the marketplace page so that users can browse through more products.
