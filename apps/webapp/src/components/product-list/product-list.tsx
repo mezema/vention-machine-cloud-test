@@ -1,4 +1,4 @@
-import { Grid, makeStyles } from "@mui/material"
+import { Grid } from "@mui/material"
 import { Product } from "@ventionMachineCloudTest/models"
 import React from "react"
 
