@@ -74,19 +74,21 @@ For a detailed list of all those technologies, you can read this [blog article](
 
 ### Run the application
 
-First, install the dependencies:
-
-```
-npm i
-```
-
-Then, run the whole stack with one command:
+Run the whole stack with one command:
 
 ```
 npm run start-local
 ```
 
 Alternatively you can run the whole stack using these commands
+
+First, install the dependencies:
+
+```
+npm i
+```
+
+Then:
 
 ```
 npm run postgres
