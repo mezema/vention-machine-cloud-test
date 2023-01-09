@@ -105,7 +105,7 @@ For a detailed list of all those technologies, you can read this [blog article](
 
 ## ⚙️ Implementation
 
-### Overview
+### Overview of implemented features
 
 - A marketplace page where users can view a list of products and their details.
 - A system for handling carts and cart items, allowing users to add products to their cart and view the items in their cart.
