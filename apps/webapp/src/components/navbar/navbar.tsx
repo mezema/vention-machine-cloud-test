@@ -10,17 +10,13 @@ import {
   ListItem,
   ListItemAvatar,
   ListItemText,
-  Menu,
-  MenuItem,
   Toolbar,
   Typography,
-  useTheme,
 } from "@mui/material"
 import { CartItem } from "@ventionMachineCloudTest/models"
 import React, { useEffect, useState } from "react"
-import { useSelector } from "react-redux"
 
-import { useGetCartItemsQuery, useGetManyCartsQuery } from "../../redux/endpoints/carts-endpoints"
+import { useGetCartItemsQuery } from "../../redux/endpoints/carts-endpoints"
 import useNavbarStyles from "./navbar.styles"
 
 export interface NavbarProps {
@@ -31,9 +27,6 @@ export interface NavbarProps {
 export function Navbar({ cartId, cartUpdate }: NavbarProps) {
   const classes = useNavbarStyles()
   const [open, setOpen] = useState(false)
-
-  const state = useSelector((state: unknown) => state)
-
   const updateCart = useGetCartItemsQuery({ id: cartId }) || undefined
   const cartItems = updateCart?.data || []
 
@@ -42,7 +35,6 @@ export function Navbar({ cartId, cartUpdate }: NavbarProps) {
   }
 
   useEffect(() => {
-    // this seems questionable. Need to look into how to do this more efficiently
     updateCartAndRefetch()
   }, [open, cartUpdate])
 

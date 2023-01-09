@@ -10,7 +10,6 @@ import axios from "axios"
 import React, { useEffect, useState } from "react"
 
 import { useAddCartItemMutation, useItemExistsQuery, useRemoveCartItemMutation } from "../../redux/endpoints/carts-endpoints"
-import { useGetRatingQuery } from "../../redux/endpoints/products-endpoints"
 import { useProductItemStyles } from "./product-item.styles"
 
 export interface ProductItemProps {

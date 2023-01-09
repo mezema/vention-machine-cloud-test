@@ -10,7 +10,7 @@ import { useAppStyles } from "./app.styles"
 
 export const App = () => {
   const classes = useAppStyles()
-  const { data: carts = [], isFetching, isLoading, isError } = useGetManyCartsQuery()
+  const { data: carts = [] } = useGetManyCartsQuery()
   const [cartUpdated, setCartUpdated] = useState(false)
 
   const cartUpdate = (update: boolean) => () => {

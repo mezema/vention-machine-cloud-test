@@ -1,5 +1,5 @@
-import { Button, Container, Grid, Link, Paper, Typography } from "@mui/material"
-import { Cart, CartItem } from "@ventionMachineCloudTest/models"
+import { Button, Container, Grid, Paper, Typography } from "@mui/material"
+import { Cart } from "@ventionMachineCloudTest/models"
 import axios from "axios"
 import React from "react"
 
