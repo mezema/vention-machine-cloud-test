@@ -105,6 +105,16 @@ For a detailed list of all those technologies, you can read this [blog article](
 
 ## ⚙️ Implementation
 
+### Overview
+
+- A marketplace page where users can view a list of products and their details.
+- A system for handling carts and cart items, allowing users to add products to their cart and view the items in their cart.
+- A navigation bar with a shopping cart icon that displays the number of items in the user's cart, and allows the user to view items in the cart.
+- A system for handling ratings and reviews, allowing users to rate products and submit their rating for a product.
+- A landing page that is displayed to users who have not yet created a cart. This page includes a "Get Started" button that allows users to create a new cart and seed the application with some initial products.
+
+</br>
+
 ### Data Model
 
 Cart
@@ -139,6 +149,8 @@ rating: number
 product: Product
 ```
 
+</br>
+
 ### Things to be improved
 
 - Add user authentication and authorization to secure api resources.
@@ -150,6 +162,8 @@ product: Product
 - Improve the design and user experience of the application by adding more visual elements and making the layout more intuitive.
 - Add the ability for users to leave reviews for products in addition to just rating them.
 - Add the ability for administrators to add, update, and delete products from the marketplace.
+
+</br>
 
 ### Database
 
