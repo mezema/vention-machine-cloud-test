@@ -139,6 +139,18 @@ rating: number
 product: Product
 ```
 
+### Things to be improved
+
+- Add user authentication and authorization to secure api resources.
+- Add pagination to the marketplace page so that users can browse through more products.
+- Allow users to sort products based on different criteria (e.g. price, name, rating).
+- Allow users to search for products by keyword.
+- Add order entity to manage and represent purchases.
+- Allow users to view the average rating of a product, as well as the individual ratings that have been submitted.
+- Improve the design and user experience of the application by adding more visual elements and making the layout more intuitive.
+- Add the ability for users to leave reviews for products in addition to just rating them.
+- Add the ability for administrators to add, update, and delete products from the marketplace.
+
 ### Database
 
 #### Postgres
