@@ -105,6 +105,40 @@ For a detailed list of all those technologies, you can read this [blog article](
 
 ## ⚙️ Implementation
 
+### Data Model
+
+Cart
+```
+id: number
+user: User
+cartItems: CartItem[]
+```
+
+Product
+```
+id: number
+name: string
+imageUrl: string
+ratings: Rating[]
+price: number
+cartItems: CartItem[]
+```
+
+CartItem
+```
+id: number
+quantity: number
+cart: Cart
+product: Product
+```
+
+Rating
+```
+id: number
+rating: number
+product: Product
+```
+
 ### Database
 
 #### Postgres
