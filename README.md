@@ -2,7 +2,7 @@
   <h1>ventionMachineCloudTest</h1>
 </div>
 <div align="center">
-  <strong>ventionMachineCloudTest, Simple application for a marketplace.</strong>
+  <strong>Simple application for a marketplace.</strong>
 </div>
 </br>
 
@@ -80,7 +80,13 @@ First, install the dependencies:
 npm i
 ```
 
-Then, run the whole stack:
+Then, run the whole stack with one command:
+
+```
+npm run start-local
+```
+
+Alternatively you can run the whole stack using these commands
 
 ```
 npm run postgres
