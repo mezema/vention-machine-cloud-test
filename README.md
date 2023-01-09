@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>ventionMachineCloudTest</h1>
+  <h1>Vention Machine Cloud Test</h1>
 </div>
 <div align="center">
   <strong>Simple application for a marketplace.</strong>
